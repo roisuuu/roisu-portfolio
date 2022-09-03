@@ -1,24 +1,48 @@
-import logo from './logo.svg';
+import { Global } from '@emotion/react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Footer from './components/shared/Footer/Footer';
+import Header from './components/shared/Header/Header';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* https://www.joshwcomeau.com/css/custom-css-reset/ */}
+      <Global
+        styles={`
+          *, *::before, *::after {
+            box-sizing: border-box;
+          }
+          * {
+            margin: 0;
+          }
+          html, body {
+            height: 100%;
+          }
+          body {
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+          }
+          img, picture, video, canvas, svg {
+            display: block;
+            max-width: 100%;
+          }
+          p, h1, h2, h3, h4, h5, h6 {
+            overflow-wrap: break-word;
+          }
+        `}
+      />
+      <Header/>
+      <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='*' element={<NotFound/>}/>
+          </Routes>
+      </BrowserRouter>
+      <Footer/>
+    </>
   );
 }
 
