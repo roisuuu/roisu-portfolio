@@ -1,3 +1,4 @@
+import { Flex } from '@chakra-ui/react';
 import { Global } from '@emotion/react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
@@ -34,13 +35,19 @@ function App() {
           }
         `}
       />
-      <Header/>
-      <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='*' element={<NotFound/>}/>
-          </Routes>
-      </BrowserRouter>
+      {/* Flex to make sure footer stays at bottom of page */}
+      <Flex
+        flexFlow={'column nowrap'}
+        minHeight={'calc(100vh - 161px)'}
+      >
+        <Header/>
+        <BrowserRouter>
+            <Routes>
+              <Route path='/' element={<Home/>}/>
+              <Route path='*' element={<NotFound/>}/>
+            </Routes>
+        </BrowserRouter>
+      </Flex>
       <Footer/>
     </>
   );

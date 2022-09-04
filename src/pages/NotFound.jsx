@@ -1,8 +1,9 @@
+import { Text } from '@chakra-ui/react'
 import React from 'react'
 
 const NotFound = () => {
   return (
-    <div>Sorry! Nothing's at this address 🤔</div>
+    <Text>Sorry! Nothing's at this address 🤔</Text>
   )
 }
 
