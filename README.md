@@ -3,6 +3,7 @@ Welcome to my portfolio project, which has been a reaaaaaaaaaaaaaaaaaally long t
 
 ## Technology Used (in no particular order)
 **JS Framework**: React 🛸
+
 **Component Library**: Chakra UI ⚡
 
 ## Notes and Changelog
